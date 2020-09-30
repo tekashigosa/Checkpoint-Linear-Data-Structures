@@ -1,0 +1,57 @@
+type 
+tab= array [0...50] of integer
+Var
+j,i,s,s1 : integer
+t,t1=tab
+begin
+write('give the length of the first table ');
+read(n);
+write('give the length of the second table ');
+read(n1);
+s:=0;
+s1:=0;
+for i from 0 to n do
+for j from 0 to n1 do 
+if t1[j]=t[i] then s:=s+t[i]+t1[j];
+else 
+s1:=s1+t1[j];
+
+write ('sum of the same numbers',s);
+write ('sum of the diffrent numbers',s1);
+end.
+
+second methode with one array
+tab= array [0...50] of integer
+Var
+j,i,s,s1 : integer
+t,t1=tab
+begin
+write('give the length of the first table ');
+read(n);
+
+s:=0;
+s1:=0;
+for i from 1 to (n-1) do
+for j from (i+1) n do
+if (t[i]=t[j])
+then s:=s+t[i]+t[j]
+else s1:=s+t[i];
+write ('sum of the same numbers',s);
+write ('sum of the diffrent numbers',s1);
+end.
+var
+h:hash_table<integer,integer>;
+begin
+s:=0;
+s1:=0;
+for i from 1to n-1 do
+for j from i+1 to n do
+begin
+r:= h .get (i);
+v:= h .get (j);
+if (r=v) then s:=s+r+v
+else s1:=s1+r;
+write ('sum of the same numbers',s);
+write ('sum of the diffrent numbers',s1);
+end.
+
